@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('recipes_to_ingredient', function (Blueprint $table) {
             $table->id();
-            $table->integer('recipes_id');
+            $table->integer('recipe_id');
             $table->integer('ingredient_id');
-            $table->foreign('recipes_id')->references('id')->on('recipe');
+            $table->string('value');
+            $table->foreign('recipe_id')->references('id')->on('recipe');
             $table->foreign('ingredient_id')->references('id')->on('ingredient');
         });
     }

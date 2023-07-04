@@ -15,16 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->text('description');
-            $table->smallInteger('portion');
-            $table->smallInteger('ccal');
-            $table->smallInteger('protein');
-            $table->smallInteger('fat');
-            $table->smallInteger('carbohydrates');
-            $table->smallInteger('cooking_time');
-            $table->text('instruction');
-            $table->string('link_to_origin');
-            $table->text('sovet');
+            $table->text('description')->nullable();
+            $table->integer('portion')->nullable();
+            $table->integer('ccal')->nullable();
+            $table->smallInteger('protein')->nullable();
+            $table->smallInteger('fat')->nullable();
+            $table->smallInteger('carbohydrates')->nullable();
+            $table->string('cooking_time')->nullable();
+            $table->text('instruction')->nullable();
+            $table->string('link_to_origin')->nullable();
         });
     }
 

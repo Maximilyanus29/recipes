@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
+            $table->boolean('contains_lactose');
+            $table->boolean('can_be_replaced_with_a_lactose_free_product');
         });
     }
 

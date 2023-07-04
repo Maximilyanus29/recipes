@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\RecipesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+/**
+ **Basic Routes for a RESTful service:
+ **Route::get($uri, $callback);
+ **Route::post($uri, $callback);
+ **Route::put($uri, $callback);
+ **Route::delete($uri, $callback);
+ **
+ */
+Route::get('recipes', [RecipesController::class, 'index']);
+Route::get('recipes/{recipe}', [RecipesController::class, 'show']);
+Route::post('recipes', [RecipesController::class, 'store']);
+Route::put('recipes/{recipe}', [RecipesController::class, 'update']);
+Route::delete('recipes/{recipe}', [RecipesController::class, 'delete']);

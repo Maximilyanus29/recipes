@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('recipes_to_category', function (Blueprint $table) {
             $table->id();
-            $table->integer('recipes_id');
+            $table->integer('recipe_id');
             $table->integer('category_id');
-            $table->foreign('recipes_id')->references('id')->on('recipe');
+            $table->foreign('recipe_id')->references('id')->on('recipe');
             $table->foreign('category_id')->references('id')->on('category');
         });
     }
