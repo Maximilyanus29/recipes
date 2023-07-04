@@ -1,0 +1,50 @@
+version: "3.9"
+
+networks:
+  backend:
+
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - "8080:80"
+
+#  php:
+#    build: ./docker/php
+##    image: php:fpm
+#    volumes:
+#      - ./app:/usr/share/nginx/html
+#    ports:
+#      - "9000:9000"
+
+  php:
+    build: docker/php/
+    working_dir: /var/www
+    volumes:
+      - ./:/usr/share/nginx/html
+      - ./docker/db:/var/lib/postgresql/data
+
+  # workspace:
+  #   image: php:fpm
+  #   volumes:
+  #     - ./workspace:/usr/share/nginx/html
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+        - ./docker/db:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
