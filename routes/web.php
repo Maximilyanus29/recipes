@@ -16,25 +16,34 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/get-racion', function () {
-
-    $res = \Illuminate\Support\Facades\DB::table("recipe")->limit(4)->get()->toArray();
-
-    $rrs = array_map(function ($el){
-        return $el->name;
-
-    }, $res);
-
-    var_dump($rrs);die;
 
 
 
-    return view('welcome');
-});
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+//
+//
+//Route::post('/', function (Request $request) {
+//
+//    var_dump($request);die;
+//
+//
+//    $models = \Illuminate\Support\Facades\DB::table("recipe")->limit(50)->get();
+//    return view('welcome', ['models' => $models]);
+//});
+
+use App\Http\Controllers\RecipesController;
+
+Route::get('/', [RecipesController::class, 'index']);
+Route::post('/', [RecipesController::class, 'index']);
+Route::get('/reset-filters', [RecipesController::class, 'resetFilters']);
+Route::get('/gen', [RecipesController::class, 'gen']);
+Route::post('/gen', [RecipesController::class, 'gen']);
+Route::get('/{slug}', [RecipesController::class, 'show']);
+
+
+
 
 
 

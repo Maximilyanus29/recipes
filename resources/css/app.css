@@ -1,0 +1,11 @@
+/*
+ * Custom CSS
+ */
+
+body{
+    background: red;
+}
+
+:root {
+    --bs-body-bg: var(--bs-gray-100);
+}

@@ -1,0 +1,98 @@
+@import "font-awesome";
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../fonts/roboto/Roboto-Black.ttf'),
+    url('../fonts/roboto/Roboto-BlackItalic.ttf'),
+    url('../fonts/roboto/Roboto-Bold.ttf'),
+    url('../fonts/roboto/Roboto-BoldItalic.ttf'),
+    url('../fonts/roboto/Roboto-Italic.ttf'),
+    url('../fonts/roboto/Roboto-Light.ttf'),
+    url('../fonts/roboto/Roboto-LightItalic.ttf'),
+    url('../fonts/roboto/Roboto-Medium.ttf'),
+    url('../fonts/roboto/Roboto-MediumItalic.ttf'),
+    url('../fonts/roboto/Roboto-Regular.ttf'),
+    url('../fonts/roboto/Roboto-Thin.ttf'),
+    url('../fonts/roboto/Roboto-ThinItalic.ttf')
+;
+    //font-weight: normal;
+    //font-style: normal;
+}
+
+
+*{
+    font-family: Roboto, sans-serif;
+    font-weight: 600;
+
+}
+
+.card{
+    margin: 10px;
+    div{
+        margin: 10px;
+    }
+}
+
+label{
+    color: white;
+}
+
+
+.filter-button{
+    background: transparent;
+    color: white;
+}
+
+
+nav{
+    .navbar-nav{
+        label{
+            text-align: center;
+        }
+        margin-bottom: 10px;
+    }
+
+
+    p{
+        color: white;
+    }
+
+    .exclude_label{
+        text-align: center;
+        font-size: 2em;
+    }
+
+
+
+    .checkboxes{
+        .btn-check:checked + .btn{
+            box-shadow: 1px 1px 6px white;
+
+            background: #e17043;
+
+            //color: black;
+        }
+
+        label.btn{
+            font-weight: 600;
+
+
+            color: white;
+            background: #e17043;
+
+            margin-bottom: 10px;
+            border: none;
+            &:hover {
+                box-shadow: 1px 1px 6px white;
+
+                background: #e17043;
+
+
+            }
+
+
+
+        }
+    }
+
+}
